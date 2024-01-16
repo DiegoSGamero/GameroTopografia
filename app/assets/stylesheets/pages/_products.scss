@@ -1,0 +1,29 @@
+.products-title {
+  color: #1c301e;
+  text-shadow: 1px 1px 2px #65ac6f;
+  border-bottom: #1c301e 2px solid;
+  box-shadow: 0px 4px 4px -4px #2C4C30;
+}
+
+.product-card {
+  padding: 12px;
+  margin: 12px;
+  opacity: 1 !important;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    box-shadow: 2px 2px 4px #2C4C30;
+    background-color: #e5f3e7;
+  }
+}
+
+.container-products {
+  margin-top: -46px;
+  margin-bottom: -15px;
+  padding-top: 15px;
+  color: #1c301e;
+  position: relative;
+}
+
+.product-description {
+  text-align: justify;
+}
