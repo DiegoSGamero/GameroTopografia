@@ -1,0 +1,194 @@
+<div class="navbar p-1 d-flex row d-none d-md-flex">
+  <%# logotipo link to home %>
+  <div class="logo col-2">
+    <%= link_to root_path, class: "navbar-brand m-0" do %>
+      <%= image_tag "lgotipo_gameroesoares-removebg-preview.png", class: "logotipo" %>
+    <% end %>
+  </div>
+
+  <%# company demonstrative items divided by type of user %>
+
+<% if user_signed_in? %>
+
+  <div class="col-7 nav-items d-flex justify-content-between">
+
+    <div class="nav-item p-1">
+      <%= link_to "Cadastre sua propriedade", new_property_path, class: "links_navbar" %>
+    </div>
+    <div class="nav-item p-1">
+      <%= link_to "Produtos", "/produtos", class: "links_navbar" %>
+    </div>
+    <div class="nav-item p-1">
+      <%= link_to "Conhecimento", "/conhecimento", class: "links_navbar" %>
+    </div>
+    <%# <div class="nav-item p-1">
+      <%= link_to "Contato", "/contato", class: "links_navbar" %>
+    <%# </div>  %>
+    <%# <div class="nav-item p-1">
+      <%= link_to "Trabalhos", "/trabalhos", class: "links_navbar" %>
+    <%# </div> %>
+    <div class="nav-item p-1">
+      <%= link_to "Perfil", "/perfil", class: "links_navbar" %>
+    </div>
+
+  </div>
+
+  <div class="col-2">
+    <div class="btn login-home ms-5 p-1 text-center">
+      <%= link_to "Sair", destroy_user_session_path, method: :delete, class: "sign_up_bar" %>
+    </div>
+  </div>
+
+</div>
+
+<% elsif admin_signed_in? %>
+
+  <div class="col-7 nav-items d-flex justify-content-between">
+    <div class="nav-item p-1">
+      <%= link_to "Clientes", "/clientes", class: "links_navbar" %>
+    </div>
+    <div class="nav-item p-1">
+      <%= link_to "Propriedades", "/propriedades", class: "links_navbar" %>
+    </div>
+  </div>
+
+  <div class="col-2">
+    <div class="btn login-home ms-5 p-1 text-center">
+      <%= link_to "Sair", destroy_admin_session_path, method: :delete, class: "sign_up_bar" %>
+    </div>
+  </div>
+</div>
+
+<% else %>
+
+  <div class="col-7 nav-items d-flex justify-content-between">
+    <div class="nav-item p-1">
+      <%= link_to "Produtos", "/produtos", class: "links_navbar" %>
+    </div>
+    <div class="nav-item p-1">
+      <%= link_to "Conhecimento", "/conhecimento", class: "links_navbar" %>
+    </div>
+    <div class="nav-item p-1">
+      <%= link_to "Contato",  "https://wa.me/5512997100762", target: "_blank", class: "links_navbar" %>
+    </div>
+    <div class="nav-item p-1">
+      <%= link_to "Orçamento", '/orcamento', class: "links_navbar" %>
+    </div>
+    <div class="nav-item p-1">
+      <%= link_to "Cadastre-se", new_user_registration_path, class: "links_navbar" %>
+    </div>
+  </div>
+
+  <div class="col-2 d-flex justify-content-center">
+
+    <div class="btn login-home p-1 text-center">
+      <%= link_to "Entrar", new_user_session_path, class: "sign_in_bar" %>
+    </div>
+    <div class="btn login-home p-1 text-center ms-3">
+      <%= link_to "Admin", new_admin_session_path, class: "sign_in_bar" %>
+    </div>
+
+  </div>
+
+</div>
+<% end %>
+
+
+
+
+<div class="navbar p-1 d-flex row d-md-none">
+  <%# logotipo link to home %>
+  <div class="logo col-2">
+    <%= link_to root_path, class: "navbar-brand m-0" do %>
+      <%= image_tag "lgotipo_gameroesoares-removebg-preview.png", class: "logotipo" %>
+    <% end %>
+  </div>
+
+  <%# company demonstrative items divided by type of user %>
+
+<% if user_signed_in? %>
+
+  <div class="col-7 nav-items d-flex justify-content-between">
+
+    <div class="nav-item p-1">
+      <%= link_to "Cadastre sua propriedade", new_property_path, class: "links_navbar" %>
+    </div>
+    <div class="nav-item p-1">
+      <%= link_to "Produtos", "/produtos", class: "links_navbar" %>
+    </div>
+    <div class="nav-item p-1">
+      <%= link_to "Conhecimento", "/conhecimento", class: "links_navbar" %>
+    </div>
+    <%# <div class="nav-item p-1">
+      <%= link_to "Contato", "/contato", class: "links_navbar" %>
+    <%# </div>  %>
+    <div class="nav-item p-1">
+      <%= link_to "Perfil", "/perfil", class: "links_navbar" %>
+    </div>
+
+  </div>
+
+  <div class="col-2">
+    <div class="btn login-home ms-5 p-1 text-center">
+      <%= link_to "Sair", destroy_user_session_path, method: :delete, class: "sign_up_bar" %>
+    </div>
+  </div>
+</div>
+
+<% elsif admin_signed_in? %>
+
+  <div class="col-7 nav-items d-flex justify-content-between">
+    <div class="nav-item p-1">
+      <%= link_to "Clientes", "/clientes", class: "links_navbar" %>
+    </div>
+    <div class="nav-item p-1">
+      <%= link_to "Propriedades", "/propriedades", class: "links_navbar" %>
+    </div>
+  </div>
+
+  <div class="col-2">
+    <div class="btn login-home ms-5 p-1 text-center">
+      <%= link_to "Sair", destroy_admin_session_path, method: :delete, class: "sign_up_bar" %>
+    </div>
+  </div>
+</div>
+
+<% else %>
+
+  <div class="dropdown col-7 nav-items d-flex justify-content-between">
+    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">Menu</button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+      <li>
+        <%= link_to "Produtos", "/produtos", class: "links_navbar" %>
+      </li>
+      <li>
+        <%= link_to "Conhecimento", "/conhecimento", class: "links_navbar" %>
+      </li>
+      <li>
+        <%= link_to "Contato",  "https://wa.me/5512997100762", target: "_blank", class: "links_navbar" %>
+      </li>
+      <li>
+        <%= link_to "Orçamento", '/orçamento', class: "links_navbar" %>
+      </li>
+      <li>
+        <%= link_to "Cadastre-se", new_user_registration_path, class: "sign_up_bar" %>
+      </li>
+
+    </ul>
+  </div>
+
+  <div class="col-2 d-flex justify-content-center">
+
+    <div class="btn login-home-2 text-center">
+      <%= link_to "Entrar", new_user_session_path, class: "sign_up_bar" %>
+    </div>
+    <div class="btn login-home-2 text-center me-2">
+      <%= link_to "Admin", new_admin_session_path, class: "sign_up_bar" %>
+    </div>
+
+  </div>
+<% end %>
+</div>
+
+</div>
