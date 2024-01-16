@@ -1,0 +1,77 @@
+<div class="container-home">
+
+  <%# here is the carousel part %>
+
+  <div class="container-banner my-3">
+      <button class="arrow-left control" aria-label="Proximo"><i class="fa-solid fa-arrow-right fa-flip-horizontal" style="color: #fff;"></i></button>
+
+      <button class="arrow-right control" aria-label="Anterior"><i class="fa-solid fa-arrow-right" style="color: #fff;"></i></button>
+
+    <div class="gallery-wrapper">
+      <div class="gallery d-flex">
+        <%= image_tag "foto1_carrossel.jpg", class: "item current-item" %>
+        <%= image_tag "foto2_carrossel.JPG", class: "item current-item" %>
+        <%= image_tag "img-sitio-rio-claro.JPG", class: "item current-item" %>
+        <%= image_tag "img-fazenda-ribeirao-claro.JPG", class: "item current-item"%>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  <%# company's presentation in a flex box %>
+
+<div class="container-landing">
+  <div class="presentation d-flex justify-content-around row">
+
+    <div class="text-presentation col-sm-10 col-md-7 my-2 px-4">
+      <h1 class="text-center my-4"> Gamero Topografia? </h1>
+      <div class="content-presentation">
+        <p> Somos uma empresa especializada em serviços topográficos, tais como geolocalização, registro de CAR, agrimensura, entre outros. Nossa missão é executar serviços de excelência, destacando nossa expertise e foco em resultados positivos, utilizando os avanços tecnológicos da área a favor do cliente.</p>
+        <p>
+          A topografia é uma área que tem por principal objetivo representar graficamente, através da planta de levantamento, todas as características de um certo ambiente, incluindo o relevo com suas curvas de nível, elementos existentes como rios e riachos, metragem, cálculo de área, pontos cotados, norte magnético ou verdadeiro, coordenadas geográficas, acidentes geográficos, etc.
+        </p>
+      </div>
+    </div>
+
+    <div class="landing-animation-1 col-sm-10 col-md-3 m-2 text-center">
+      <%= image_tag "png-transparent-surveyor-removebg-preview.png", class: "landing-animation-1" %>
+    </div>
+
+  </div>
+
+  <div class="why mt-5">
+
+    <div class="text-why m-2 px-4">
+      <div class="subtitle-2 m-2">
+        <h1 class="text-center my-3"> Para que contratar? </h1>
+      </div>
+      <div class="content-why">
+        <p> Contratar serviços de topografia é essencial para procedimentos como venda, divisão ou retificação de matrículas de imóveis rurais. O georreferenciamento, realizado por meio de levantamentos topográficos, é um processo fundamental que define com precisão a forma, dimensão e localização do imóvel rural. Essa formalização técnica da área é crucial para atender aos requisitos legais e facilitar transações imobiliárias.</p>
+        <p> Certamente, o georreferenciamento e os serviços de topografia desempenham um papel crucial em várias situações relacionadas a propriedades rurais e urbanas. Além da questão de venda, divisão ou retificação de matrículas, existem outros motivos pelos quais as pessoas buscam serviços de topografia, incluindo:
+          <ul>
+            <li> Regularização Fundiária;</li>
+            <li> Projetos de Construção; </li>
+            <li> Planejamento Urbano; </li>
+            <li> Agricultura: gestão de culturas, drenagem de terrenos e planejamento de irrigação; </li>
+            <li> Monitoramento Ambiental; </li>
+          </ul>
+        Cada um desses motivos destaca a importância da topografia em diversos setores, contribuindo para a tomada de decisões informadas e o uso eficiente da terra. </p>
+      </div>
+    </div>
+
+    <div class="landing-animation-2 my-5 text-center">
+      <div>
+        <%= image_tag('undraw_agreement_re_d4dv.svg', alt: 'Acordo', class:'agreement') %>
+      </div>
+    </div>
+
+  </div>
+  <div class="slogan m-3 p-2">
+    <div class="d-flex justify-content-center">
+      <h1 style="color: #2C4C30;">Analise, </h1>
+      <h1 style="color: #419049;">Pense, </h1>
+      <h1 style="color: #2C4C30;">Inove!</h1>
+    </div>
+  </div>
+</div>
