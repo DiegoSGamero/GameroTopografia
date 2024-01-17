@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :admins
   devise_for :users
+  devise_for :admins
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Pages routes
   root to: 'pages#home'
