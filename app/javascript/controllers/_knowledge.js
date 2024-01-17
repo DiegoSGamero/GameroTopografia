@@ -1,4 +1,4 @@
-window.onload = function() {
+document.addEventListener("DOMContentLoaded", function() {
   const buttons = document.querySelectorAll(".knowledge-topics .btn");
   const sections = document.querySelectorAll(".knowledge-texts > div");
 
@@ -7,4 +7,4 @@ window.onload = function() {
       sections[index].scrollIntoView({ behavior: "smooth" });
     });
   });
-};
+});
