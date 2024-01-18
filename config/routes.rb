@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/produtos', to: 'pages#products', as: 'products'
   get '/conhecimento', to: 'pages#knowledge', as: 'knowledge'
+
 end
