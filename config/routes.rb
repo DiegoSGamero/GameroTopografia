@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
   devise_for :admins
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  # Pages routes
+  devise_for :users
+
   root to: 'pages#home'
   get '/produtos', to: 'pages#products', as: 'products'
   get '/conhecimento', to: 'pages#knowledge', as: 'knowledge'
+  get '/users/signup', to: 'users/registrations#new', as: 'users/signup'
 
 end

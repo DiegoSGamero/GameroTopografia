@@ -1,0 +1,117 @@
+<div class="container-signup d-flex justify-content-evenly row" data-signup-target="user">
+  <div class="signup-form col-sm-10 col-md-5">
+    <h2 style="color: #1c301e;" class="text-center my-3">Cadastro</h2>
+    <h2 style="color: #1c301e;" class="text-center">Cliente/Confrontante</h2>
+
+    <div class="user-signup-form">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div class="field m-2">
+          <%= f.label :full_name, "Nome Completo" %><br />
+          <%= f.text_field :full_name,
+                            required: true,
+                            class: "wide-input" %>
+        </div>
+
+        <div class="field m-2">
+          <%= f.label :fantasy_name, "Nome Fantasia (opção empresa)" %><br />
+          <%= f.text_field :fantasy_name,
+                            autofocus: true,
+                            class: "wide-input" %>
+        </div>
+
+        <div class="field m-2">
+          <%= f.label :email %><br />
+          <%= f.email_field :email,
+                            autofocus: true,
+                            autocomplete: "email",
+                            required: true,
+                            placeholder: "username@example.com.br",
+                            class: "wide-input" %>
+        </div>
+
+        <div class="field m-2">
+          <%= f.label :RG, "RG (somente números)" %><br />
+          <%= f.text_field :RG,
+                            autocomplete: "off",
+                            autofocus: true,
+                            required: true,
+                            placeholder: " _ _ . _ _ _ . _ _ _ - _ ",
+                            class: "wide-input" %>
+        </div>
+
+
+        <div class="field m-2">
+          <%= f.label :CPF, "CPF (somente números)" %><br />
+          <%= f.text_field :CPF,
+                          autocomplete: "off",
+                          autofocus: true,
+                          required: true,
+                          placeholder: " _ _ _ . _ _ _ . _ _ _ - _ _ ",
+                          class: "wide-input" %>
+        </div>
+
+        <div class="field m-2">
+          <%= f.label :CNPJ, "CNPJ (opção empresa)" %><br />
+          <%= f.text_field :CNPJ,
+                            autocomplete: "off",
+                            autofocus: true,
+                            class: "wide-input" %>
+        </div>
+
+        <div class="field m-2">
+          <%= f.label :phone_number, "Telefone (com DDD)" %><br />
+          <%= f.text_field :phone_number,
+                            autofocus: true,
+                            required: true,
+                            placeholder: "( _ _ ) _ _ _ _ _ - _ _ _ _ ",
+                            class: "wide-input" %>
+        </div>
+
+        <div class="field m-2">
+          <%= f.label :role, "Cliente ou confrontante?" %><br />
+          <%= f.select :role, ['Cliente', 'Confrontante'], {}, { class: "wide-input" } %>
+        </div>
+
+        <div class="field m-2">
+          <%= f.label :address, "Endereço" %><br />
+          <%= f.text_field :address,
+                            autocomplete: "address",
+                            autofocus: true,
+                            required: true,
+                            class: "wide-input" %>
+        </div>
+
+        <div class="field m-2">
+          <%= f.label :password, "Senha" %>
+          <% if @minimum_password_length %>
+          <em>( Mínimo de <%= @minimum_password_length %> caracteres com letra e número)</em>
+          <% end %><br />
+          <%= f.password_field :password,
+                                class: "wide-input" %>
+        </div>
+
+        <div class="field m-2">
+          <%= f.label :password_confirmation, "Confirme sua Senha" %><br />
+          <%= f.password_field :password_confirmation,
+                                required: true,
+                                class: "wide-input" %>
+        </div>
+
+        <div class="actions m-2">
+          <%= f.submit "Pronto!" %>
+        </div>
+      <% end %>
+
+      <div class="my-3">
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="img-signup-form col-sm-10 col-md-5 pt-4">
+    <%= image_tag('undraw_access_account_re_8spm.svg', alt: 'Cadastro', class:'signup-img') %>
+  </div>
+
+</div>

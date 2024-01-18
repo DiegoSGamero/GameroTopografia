@@ -6,7 +6,7 @@ class Admins::Registrations::RegistrationsController < Devise::RegistrationsCont
 
   # GET /resource/sign_up
   def new
-    render 'admins/registrations/new'
+    @admin = Admin.new
   end
 
   # POST /resource
