@@ -1,0 +1,35 @@
+.login-form {
+  width: 100%;
+  color: #1c301e;
+}
+
+.signup-link {
+  text-decoration: none;
+  color: #1c301e;
+  margin-top: 16px;
+  margin-bottom: 4px;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.forgot-password {
+  text-decoration: none;
+  color: #1c301e;
+  margin-bottom: 4px;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.field {
+  margin-left: 88px;
+}
+
+.img-signup {
+  padding-top: 50px;
+}
+
+.container-login {
+  margin-bottom: 52px;
+}
