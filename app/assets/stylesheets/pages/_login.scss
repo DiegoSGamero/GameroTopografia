@@ -33,3 +33,24 @@
 .container-login {
   margin-bottom: 52px;
 }
+
+.btn-login-form {
+  text-decoration: none;
+  color: #2C4C30;
+  padding-block: 4px;
+  padding-inline: 8px;
+  border-radius: 4px;
+  background-color: #51C874 !important;
+  box-shadow: 0px 0px 2px #5c5339d5;
+  margin-top: 16px !important;
+  margin-left: 8px !important;
+  transition: 0.3s;
+  &:hover {
+    // background-color: #f8e5ad !important;
+    font-weight: bold;
+    box-shadow: 1px 1px 2px #5c5339d5;
+  }
+  &:active {
+    box-shadow: -2px -2px 4px 0px #5c5339d5;
+  }
+}
