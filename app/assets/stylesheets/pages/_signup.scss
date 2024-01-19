@@ -45,3 +45,15 @@
     box-shadow: -2px -2px 4px 0px #5c5339d5;
   }
 }
+
+.signup-link {
+  text-decoration: none;
+  color: #2C4C30;
+  margin-top: 16px;
+  margin-bottom: 4px;
+  &:hover {
+    text-decoration: underline;
+    color: #51C874;
+    text-shadow: 0.5px solid #5c5339d5;
+  }
+}
