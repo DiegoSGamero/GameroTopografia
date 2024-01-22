@@ -1,0 +1,63 @@
+<div class="container-signup d-flex justify-content-evenly row" data-signup-target="admin">
+  <div class="signup-form col-sm-10 col-md-6">
+    <h2 style="color: #1c301e;" class="text-center">Moderador</h2>
+
+    <div class="admin-signup-form">
+      <%= form_for(resource, as: resource_name, url: admin_registration_path) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div class="field m-2">
+          <%= f.label :full_name, "Nome Completo" %><br />
+          <%= f.text_field :full_name,
+                            autofocus: true,
+                            autocomplete: "name",
+                            required: true,
+                            class: "wide-input" %>
+        </div>
+
+        <div class="field m-2">
+          <%= f.label :username, "Username" %><br />
+          <%= f.text_field :username,
+                            autofocus: true,
+                            autocomplete: "username",
+                            required: true,
+                            class: "wide-input" %>
+        </div>
+
+        <div class="field m-2">
+          <%= f.label :email %><br />
+          <%= f.email_field :email,
+                            autofocus: true,
+                            autocomplete: "email",
+                            required: true,
+                            class: "wide-input" %>
+        </div>
+
+        <div class="field m-2">
+          <%= f.label :password, "Senha" %>
+          <% if @minimum_password_length %>
+            <em>( Mínimo de <%= @minimum_password_length %> caracteres com letra e número)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password", class: "wide-input" %>
+        </div>
+
+        <div class="field m-2">
+          <%= f.label :password_confirmation, "Confirme sua senha" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", required: true, class: "wide-input" %>
+        </div>
+
+        <div class="actions m-2">
+          <%= f.submit "Pronto!", class: "btn-signup-form" %>
+        </div>
+      <% end %>
+
+      <div class="my-3">
+        <%= render "admins/shared/links" %>
+      </div>
+
+    </div>
+  </div>
+  <div class="img-signup col-sm-10 col-md-5 pt-4">
+    <%= image_tag('undraw_access_account_re_8spm.svg', alt: 'Cadastro', class:'signup-admin-img') %>
+  </div>
+</div>
