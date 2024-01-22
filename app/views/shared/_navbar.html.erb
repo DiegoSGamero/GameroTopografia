@@ -35,7 +35,7 @@
 
   <div class="col-2">
     <div class="btn login-home ms-5 p-1 text-center">
-      <%= link_to "Sair", destroy_user_session_path, method: :delete, class: "sign_up_bar" %>
+      <%= link_to "Sair", destroy_user_session_path, data: {turbo_method: :delete}, class: "sign_in_bar" %>
     </div>
   </div>
 
@@ -54,7 +54,7 @@
 
   <div class="col-2">
     <div class="btn login-home ms-5 p-1 text-center">
-      <%= link_to "Sair", destroy_admin_session_path, method: :delete, class: "sign_up_bar" %>
+      <%= link_to "Sair", destroy_admin_session_path, data: {turbo_method: :delete}, class: "sign_in_bar" %>
     </div>
   </div>
 </div>
@@ -130,7 +130,7 @@
 
   <div class="col-2">
     <div class="btn login-home ms-5 p-1 text-center">
-      <%= link_to "Sair", destroy_user_session_path, method: :delete, class: "sign_up_bar" %>
+      <%= link_to "Sair", destroy_user_session_path, data: {turbo_method: :delete}, class: "sign_in_bar" %>
     </div>
   </div>
 </div>
@@ -148,7 +148,7 @@
 
   <div class="col-2">
     <div class="btn login-home ms-5 p-1 text-center">
-      <%= link_to "Sair", destroy_admin_session_path, method: :delete, class: "sign_up_bar" %>
+      <%= link_to "Sair", destroy_admin_session_path, data: {turbo_method: :delete}, class: "sign_in_bar" %>
     </div>
   </div>
 </div>
