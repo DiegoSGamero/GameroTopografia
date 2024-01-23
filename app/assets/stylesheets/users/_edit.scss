@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 0;
 }
 
 .edit-card {
@@ -10,15 +11,38 @@
   border: 0.5px solid #947151;
   border-radius: 8px;
   box-shadow: 0px 0px 4px #725337;
+  width: 60%;
+  margin-bottom: 60px;
 }
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  margin: 8px;
+  width: 90%;
+}
+
 
 .form-group {
   display: flex;
   align-items: center;
+  flex-direction: row;
   margin: 8px;
+  width: 90%;
 }
 
 .form-group label {
   margin-right: 8px;
-  width: 120px;
+  width: 240px;
+}
+
+.form-group input {
+  width: 420px;
+}
+
+.hint-below {
+  font-size: 0.8em;
+  color: #888;
+  margin-left: 8px;
+  margin-top: -4px;
 }
