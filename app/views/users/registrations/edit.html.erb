@@ -1,7 +1,7 @@
 <div class="container edit-container">
-  <h2 class="text-center m-5">Editar perfil</h2>
+  <h2 class="text-center m-3" style="color: #183b27;">Editar perfil</h2>
 
-  <div class="edit-card">
+  <div class="edit-card mb-3">
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= f.error_notification %>
@@ -10,32 +10,43 @@
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <p>Esperando confirmação para: <%= resource.unconfirmed_email %></p>
         <% end %>
-
-        <%= f.input :email,
-                    label: "Email",
-                    required: false,
-                    input_html: { placeholder: "Nova descrição" } %>
-        <%= f.input :address,
-                    label: "Endereço",
-                    required: false,
-                    input_html: { placeholder: "Nova descrição" } %>
-        <%= f.input :phone_number,
-                    label: "Telefone",
-                    required: false,
-                    input_html: { placeholder: "Nova descrição" } %>
-        <%= f.input :password,
-                    label: "Nova senha",
-                    hint: "Pode deixar em branco se não quiser alterar este campo",
-                    required: false,
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :password_confirmation,
-                    label: "Confirme a nova senha",
-                    required: false,
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :current_password,
-                    hint: "Precisamos da sua senha atual para confirmar suas alterações",
-                    required: true,
-                    input_html: { autocomplete: "current-password" } %>
+        <div class="form-group">
+          <%= f.input :email,
+                      label: "Email",
+                      required: false,
+                      input_html: { placeholder: "Nova descrição" } %>
+        </div>
+        <div class="form-group">
+          <%= f.input :address,
+                      label: "Endereço",
+                      required: false,
+                      input_html: { placeholder: "Nova descrição" } %>
+        </div>
+        <div class="form-group">
+          <%= f.input :phone_number,
+                      label: "Telefone",
+                      required: false,
+                      input_html: { placeholder: "Nova descrição" } %>
+        </div>
+        <div class="form-group">
+          <%= f.input :password,
+                      label: "Nova senha",
+                      hint: "Pode deixar em branco se não quiser alterar este campo",
+                      required: false,
+                      input_html: { autocomplete: "new-password" } %>
+        </div>
+        <div class="form-group">
+          <%= f.input :password_confirmation,
+                      label: "Confirme a nova senha",
+                      required: false,
+                      input_html: { autocomplete: "new-password" } %>
+        </div>
+        <div class="form-group">
+          <%= f.input :current_password,
+                      hint: "Precisamos da sua senha atual para confirmar suas alterações",
+                      required: true,
+                      input_html: { autocomplete: "current-password" } %>
+        </div>
       </div>
 
       <div class="form-actions">

@@ -1,0 +1,24 @@
+.edit-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-card {
+  padding: 16px;
+  border: 0.5px solid #947151;
+  border-radius: 8px;
+  box-shadow: 0px 0px 4px #725337;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin: 8px;
+}
+
+.form-group label {
+  margin-right: 8px;
+  width: 120px;
+}
