@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   get '/produtos', to: 'pages#products', as: 'products'
   get '/conhecimento', to: 'pages#knowledge', as: 'knowledge'
   resources :properties
+
+  get '/perfil', to: 'users#profile', as: 'user_profile'
 end
