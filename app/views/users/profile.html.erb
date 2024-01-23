@@ -16,6 +16,9 @@
       <p class="profile-item">Telefone: <%= @user.phone_number %></p>
       <p class="profile-item">Categoria: <%= @user.role %></p>
       <p class="profile-item">Email: <%= @user.email %></p>
+      <div class="div-edit-profile">
+        <%= link_to "Editar perfil", edit_user_registration_path, class: 'btn-edit-profile' %>
+      </div>
     </div>
   </div>
 </div>
