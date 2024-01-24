@@ -1,0 +1,24 @@
+<div class="container user-profile">
+  <div class="card-profile">
+    <div class="user-name mb-3">
+      <h1 class="text-center" style="color: #1c301e;"><%= @user.full_name.split.map(&:capitalize).join(' ') %></h1>
+    </div>
+    <div class="user-infos">
+      <p class="profile-item">Endereço: <%= @user.address %></p>
+      <% if @user.fantasy_name.present? %>
+        <p class="profile-item">Nome Fantasia: <%= @user.fantasy_name %></p>
+      <% end %>
+      <% if @user.CNPJ.present? %>
+        <p class="profile-item">CNPJ: <%= @user.CNPJ %></p>
+      <% end %>
+      <p class="profile-item">CPF: <%= @user.CPF %></p>
+      <p class="profile-item">RG: <%= @user.RG %></p>
+      <p class="profile-item">Telefone: <%= @user.phone_number %></p>
+      <p class="profile-item">Categoria: <%= @user.role %></p>
+      <p class="profile-item">Email: <%= @user.email %></p>
+      <div class="div-edit-profile">
+        <%= link_to "Editar perfil", edit_user_registration_path, class: 'btn-edit-profile' %>
+      </div>
+    </div>
+  </div>
+</div>

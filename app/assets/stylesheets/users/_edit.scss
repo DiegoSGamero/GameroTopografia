@@ -1,0 +1,69 @@
+.edit-container {
+  color: #2C4C30;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  width: 100vw !important;
+}
+
+.edit-card {
+  padding: 16px;
+  border: 0.5px solid #947151;
+  border-radius: 8px;
+  box-shadow: 0px 0px 4px #725337;
+  width: 60%;
+  margin-bottom: 60px;
+}
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  margin: 8px;
+  width: 90%;
+}
+
+
+.form-group {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin: 8px;
+  width: 90%;
+}
+
+.form-group label {
+  margin-right: 8px;
+  width: 90%;
+}
+
+.form-group input {
+  width: 420px;
+}
+
+.hint-below {
+  font-size: 0.8em;
+  color: #848b81;
+  margin-left: 8px;
+  margin-top: -4px;
+}
+
+.btn-edit-card {
+  text-decoration: none !important;
+  padding: 4px;
+  padding-inline: 8px;
+  border-radius: 2px;
+  border: none;
+  color: #2C4C30;
+  background-color: #51C874 !important;
+  box-shadow: 0px 0px 2px #5c5339d5;
+  transition: 0.3s;
+  &:hover {
+    font-weight: bold;
+    box-shadow: 1px 1px 2px #5c5339d5;
+  }
+  &:active {
+    box-shadow: -2px -2px 4px 0px #5c5339d5;
+  }
+}
