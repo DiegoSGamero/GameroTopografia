@@ -36,3 +36,11 @@ en:
       user:
         password: "Sua senha deve ter pelo menos 6 caracteres."
         current_password: "Digite sua senha atual para confirmar as alterações."
+pt-BR:
+  activerecord:
+    errors:
+      models:
+        property:
+          attributes:
+            limit_type:
+              blank: "deve ser preenchido"           
