@@ -1,0 +1,101 @@
+<div class="container new-property">
+  <h2 style="color: #1c301e;" class="products-title text-center my-3">Nova Propriedade</h2>
+
+  <div class="d-flex justify-content-between row">
+    <div class="property-form col-sm-10 col-md-6">
+
+      <div class="property-new-form">
+        <%= form_for @property do |f| %>
+
+          <div class="field m-2">
+            <%= f.label :name, "Nome", for: "name" %><br />
+            <%= f.text_field :name,
+                              id: "name",
+                              autofocus: true,
+                              autocomplete: "name",
+                              required: true,
+                              class: "property-field" %>
+          </div>
+
+          <div class="field m-2">
+            <%= f.label :address, "Endereço", for: "address" %><br />
+            <%= f.text_field :address,
+                              id: "address",
+                              autofocus: true,
+                              autocomplete: "address",
+                              required: true,
+                              class: "property-field" %>
+          </div>
+
+          <div class="field m-2">
+            <%= f.label :owners, "Proprietários", for: "owners" %><br />
+            <%= f.text_field :owners,
+                              id: "owners",
+                              autofocus: true,
+                              autocomplete: "owners",
+                              required: true,
+                              class: "property-field" %>
+          </div>
+
+          <div class="field m-2">
+            <%= f.label :size, "Tamanho estimado", for: "size" %><br />
+            <%= f.text_field :size,
+                              id: "size",
+                              autofocus: true,
+                              autocomplete: "size",
+                              required: true,
+                              class: "property-field" %>
+          </div>
+
+          <div class="field m-2">
+            <%= f.label :registration_number, "Matrícula", for: "registration_number" %><br />
+            <%= f.text_field :registration_number,
+                              id: "registration_number",
+                              autofocus: true,
+                              autocomplete: "registration_number",
+                              required: true,
+                              class: "property-field" %>
+          </div>
+
+          <div class="field m-2">
+            <%= f.label :limit_type, "Tipos de divisa", for: "limit_type" %><br />
+            <%= f.text_field :limit_type,
+                              id: "limit_type",
+                              autofocus: true,
+                              required: true,
+                              class: "property-field" %>
+          </div>
+
+          <div class="field m-2">
+            <%= f.label :car, "CAR (Cadastro Ambiental Rural) - opcional", for: "car" %><br />
+            <%= f.text_field :limit_type,
+                              id: "car",
+                              autofocus: true,
+                              required: false,
+                              class: "property-field" %>
+          </div>
+
+          <div class="field m-2">
+            <%= f.label :ccir, "CCIR (Cadastro de Imóveis Rurais) - opcional", for: "ccir" %><br />
+            <%= f.text_field :limit_type,
+                              id: "ccir",
+                              autofocus: true,
+                              required: false,
+                              class: "property-field" %>
+          </div>
+
+          <div class="field m-2 my-3">
+            <%= f.submit "Registrar", class: "btn-edit-card" %>
+          </div>
+
+        <% end %>
+
+
+
+      </div>
+    </div>
+    <div class="img-new-property d-flex align-items-center col-sm-10 col-md-5">
+      <%= image_tag('undraw_access_account_re_8spm.svg', alt: 'Cadastro', class:'new-property-img') %>
+    </div>
+  </div>
+</div>
