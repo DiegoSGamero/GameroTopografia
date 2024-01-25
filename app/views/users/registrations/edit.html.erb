@@ -20,7 +20,7 @@
 
           <div class="form-group col-md-6">
             <%= f.input :address,
-                        label: "Endereço",
+                        label: "Endereço completo",
                         required: false,
                         input_html: { placeholder: "Nova descrição" } %>
           </div>
@@ -29,9 +29,14 @@
 
           <div class="form-group">
             <%= f.input :phone_number,
-                        label: "Telefone",
-                        required: false,
-                        input_html: { placeholder: "Nova descrição" } %>
+                        label: "Telefone (somente números)",
+                        required: false %>
+          </div>
+
+          <div class="form-group">
+            <%= f.input :CPF,
+                        label: "CPF (somente números)",
+                        required: false %>
           </div>
 
           <div class="form-group">
