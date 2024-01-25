@@ -22,9 +22,9 @@ class PropertiesController < ApplicationController
   def create
     @property = current_user.properties.build(property_params)
     if @property.save
-      redirect_to @property, notice: 'Propriedade criada com sucesso.'
+      redirect_to root_path, notice: 'Propriedade criada com sucesso.'
     else
-      render :new, status: :unprocessable_entity, alert: "Não foi possível fazer o registro dessa propriedade"
+      render :new, status: :unprocessable_entity, alert: 'Não foi possível fazer o registro dessa propriedade'
       puts @property.errors.full_messages
     end
   end

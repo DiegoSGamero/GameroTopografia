@@ -1,9 +1,9 @@
 <div class="container properties-index">
   <div class="m-3">
-    <h1 class="text-center" style="color: #1c301e;">Propriedades</h1>
+    <h1 class="products-title text-center" style="color: #1c301e;">Propriedades</h1>
   </div>
 
-  <div class="form-properties-index d-flex justify-content-center align-items-center text-center">
+  <div class="form-properties-index d-flex justify-content-center align-items-center text-center my-3">
     <%= simple_form_for :search, url: search_property_properties_path, method: :get, class: 'd-flex align-items-center ' do |f| %>
                   <div class="d-flex align-items-center">
                     <div class="col-auto prof-choice">
@@ -14,13 +14,13 @@
                       <%= f.button :submit, 'Pesquisar', class: 'search-user-index' %>
                     </div>
                   </div>
-                <% end %>
+      <% end %>
   </div>
 
   <% if @query.present? %>
     <% if @properties.any? { |property| property.name&.downcase&.include?(@query.downcase) } %>
       <% @properties.each do |property| %>
-        <div class="card-index-user d-flex justify-content-evenly">
+        <div class="card-index-property d-flex justify-content-evenly">
           <div>
             <p>Nome: <%= property.name.split.map(&:capitalize).join(' ') %></p>
             <p>Matrícula: <%= property.registration_number %></p>
@@ -51,7 +51,7 @@
     <% end %>
   <% else %>
     <% @properties.each do |property| %>
-        <div class="card-index-user d-flex justify-content-evenly">
+        <div class="card-index-property d-flex justify-content-evenly">
           <div>
             <p>Nome: <%= property.name.split.map(&:capitalize).join(' ') %></p>
             <p>Matrícula: <%= property.registration_number %></p>

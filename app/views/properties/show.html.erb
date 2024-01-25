@@ -1,0 +1,14 @@
+<div class="container show-property">
+  <div class="card-property">
+    <div class="property-name my-3">
+      <h1 class="text-center" style="color: #1c301e;"><%= @property.name.split.map(&:capitalize).join(' ') %></h1>
+    </div>
+    <div class="property-infos">
+      <p class="profile-item">Endereço: <%= @property.address %></p>
+      <p class="profile-item">Proprietários: <%= @property.owners %></p>
+      <p class="profile-item">Tamanho: <%= @property.size %></p>
+      <p class="profile-item">Tipos de divisa: <%= @property.limit_type %></p>
+      <p class="profile-item">Matrícula: <%= @property.registration_number %></p>
+    </div>
+  </div>
+</div>
