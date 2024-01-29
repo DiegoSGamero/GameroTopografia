@@ -3,7 +3,7 @@ class PropertiesController < ApplicationController
     @query = params[:search]&.dig(:query)
     if @query.present?
       search_query = "%#{@query}%"
-      @properties = Property.where('name ILIKE :query OR owners ILIKE :query OR registration_number ILIKE :query', query: search_query)
+      @properties = Property.where('LOWER(name) LIKE LOWER(:query) OR LOWER(owners) LIKE LOWER(:query) OR registration_number LIKE :query', query: search_query)
     else
       @properties = Property.all
     end
