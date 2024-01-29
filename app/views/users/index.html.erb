@@ -1,0 +1,79 @@
+<div class="container users-index">
+  <div class="m-3">
+    <h1 class="text-center" style="color: #1c301e;">Encontre usuários aqui</h1>
+  </div>
+
+  <div class="form-user-index d-flex justify-content-center align-items-center text-center">
+    <%= simple_form_for :search, url: search_user_users_path, method: :get, class: 'd-flex align-items-center ' do |f| %>
+                  <div class="d-flex align-items-center">
+                    <div class="col-auto prof-choice">
+                      <%= f.input :query, label: false, placeholder: 'Digite aqui...', input_html: { class: 'user-index-search' }, wrapper_html: {class: 'm-0'} %>
+                    </div>
+
+                    <div class="col-auto">
+                      <%= f.button :submit, 'Pesquisar', class: 'search-user-index' %>
+                    </div>
+                  </div>
+                <% end %>
+  </div>
+  <div class="user-index-box">
+  <% if @query.present? %>
+    <% if @users.any? { |user| user.full_name&.downcase&.include?(@query.downcase) || user.CPF&.include?(@query) } %>
+      <% @users.each do |user| %>
+        <div class="card-index-user d-flex justify-content-evenly">
+          <div>
+            <p> Nome: <%= user.full_name.split.map(&:capitalize).join(' ') %></p>
+            <% if user.fantasy_name.present? %>
+              <p>Nome fantasia: <%= user.fantasy_name.split.map(&:capitalize).join(' ') %></p>
+            <% elsif user.CNPJ.present? %>
+              <p>CNPJ: <%= user.CNPJ %></p>
+            <% end %>
+            <p>CPF: <%= user.CPF %></p>
+            <p>RG: <%= user.RG %></p>
+          </div>
+          <div>
+            <p>Endereço: <%= user.address %></p>
+            <p>Telefone: <%= user.phone_number %></p>
+            <p>Email: <%= user.email %></p>
+          </div>
+        </div>
+
+        <div style="height: 120px;">
+        </div>
+      <% end %>
+    <% else %>
+      <div class= "d-flex justify-content-center align-items-center">
+        <div class="message d-flex align-items-center">
+          <p class="text-center m-4">Nenhum usuário encontrado para "<strong><%= @query %></strong>".</p>
+        </div>
+        <div class="d-flex align-items-center">
+          <%= link_to "Voltar", "/clientes", class: "btn back-to-users" %>
+        </div>
+      </div>
+      <div class="img-index-user text-center mb-3">
+        <%= image_tag('undraw_cancel_re_pkdm.svg', alt: 'Sem resultado', class:'error-img') %>
+      </div>
+    <% end %>
+  <% else %>
+    <% @users.each do |user| %>
+      <div class="card-index-user d-flex justify-content-evenly">
+        <div>
+          <p> Nome: <%= user.full_name.split.map(&:capitalize).join(' ') %></p>
+          <% if user.fantasy_name.present? %>
+            <p>Nome fantasia: <%= user.fantasy_name.split.map(&:capitalize).join(' ') %></p>
+          <% elsif user.CNPJ.present? %>
+            <p>CNPJ: <%= user.CNPJ %></p>
+          <% end %>
+          <p>CPF: <%= user.CPF %></p>
+          <p>RG: <%= user.RG %></p>
+        </div>
+        <div>
+          <p>Endereço: <%= user.address %></p>
+          <p>Telefone: <%= user.phone_number %></p>
+          <p>Email: <%= user.email %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  </div>
+</div>

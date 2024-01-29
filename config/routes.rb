@@ -14,11 +14,18 @@ Rails.application.routes.draw do
 
 
   get '/perfil', to: 'users#profile', as: 'user_profile'
+  get '/clientes', to: 'users#index', as: 'user_index'
+  resources :users do
+    collection do
+      get 'search_user', to: 'users#index'
+    end
+  end
 
-  get '/propriedades', to: "properties#index", as: 'properties_index'
+  get '/propriedades', to: 'properties#index', as: 'properties_index'
   resources :properties do
     collection do
       get 'search_property', to: 'properties#index'
     end
   end
+
 end
