@@ -1,0 +1,34 @@
+<div class="mail-container">
+  <div class="products-title text-center mt-3 mx-3">
+    <h1>Do que você precisa?</h1>
+  </div>
+  <div class="mail-card my-3 p-2">
+    <%= form_tag(url: new_contact_path, method: :post) do |form| %>
+      <div class="mail-fields p-2">
+        <div class="mail-field my-2 px-3">
+          <%= label_tag(:name, 'Seu nome') %>
+          <%= text_field_tag(:name, nil, class: 'form-control', placeholder: 'Seu nome') %>
+        </div>
+
+        <div class="mail-field my-2 px-3">
+          <%= label_tag(:phone_number, 'Seu número de telefone') %>
+          <%= text_field_tag(:phone_number, nil, class: 'form-control', placeholder: '(xx)xxxxx-xxxx') %>
+        </div>
+
+        <div class="mail-field my-2 px-3">
+          <%= label_tag(:subject, 'Assunto') %>
+          <%= text_field_tag(:subject, nil, class: 'form-control', placeholder: 'Assunto') %>
+        </div>
+
+        <div class="mail-field my-2 px-3">
+          <%= label_tag(:message, 'Sua mensagem') %>
+          <%= text_area_tag(:message, nil, class: 'form-control', placeholder: 'Sua mensagem') %>
+        </div>
+
+        <div class="mail-field mt-3 p-3">
+          <%= button_tag('Enviar', type: 'submit', class: 'btn-edit-profile') %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

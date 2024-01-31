@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :admins, controllers: {
     registrations: 'admins/registrations',
     sessions: 'admins/sessions'
@@ -27,5 +28,8 @@ Rails.application.routes.draw do
       get 'search_property', to: 'properties#index'
     end
   end
+
+  get '/orcamento', to: 'contact#new', as: 'new_contact'
+  post '/orcamento', to: 'contact#create', as: 'create_contact'
 
 end
