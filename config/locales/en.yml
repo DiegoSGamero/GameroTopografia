@@ -34,7 +34,7 @@ en:
   simple_form:
     hints:
       user:
-        password: "Sua senha deve ter pelo menos 6 caracteres."
+        password: "Sua senha deve ter pelo menos 8 caracteres."
         current_password: "Digite sua senha atual para confirmar as alterações."
 pt-BR:
   activerecord:
@@ -43,4 +43,4 @@ pt-BR:
         property:
           attributes:
             limit_type:
-              blank: "deve ser preenchido"           
+              blank: "deve ser preenchido"
