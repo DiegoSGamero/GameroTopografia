@@ -29,6 +29,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :contact, only: %i[new create], path: '/orcamento'
+  get '/orcamento', to: 'contact#new', as: 'new_contact'
+  post '/orcamento', to: 'contact#create', as: 'create_contact'
 
 end

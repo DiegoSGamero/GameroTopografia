@@ -3,30 +3,30 @@
     <h1>Do que você precisa?</h1>
   </div>
   <div class="mail-card my-3 p-2">
-    <%= form_with(url: new_contact_path, method: :post) do |form| %>
+    <%= form_tag(url: new_contact_path, method: :post) do |form| %>
       <div class="mail-fields p-2">
         <div class="mail-field my-2 px-3">
-          <%= form.label :name, 'Seu nome' %>
-          <%= form.text_field :name, class: 'form-control', placeholder: 'Seu nome' %>
+          <%= label_tag(:name, 'Seu nome') %>
+          <%= text_field_tag(:name, nil, class: 'form-control', placeholder: 'Seu nome') %>
         </div>
 
         <div class="mail-field my-2 px-3">
-          <%= form.label :phone_number, 'Seu número de telefone' %>
-          <%= form.text_field :phone_number, class: 'form-control', placeholder: '(xx)xxxxx-xxxx' %>
+          <%= label_tag(:phone_number, 'Seu número de telefone') %>
+          <%= text_field_tag(:phone_number, nil, class: 'form-control', placeholder: '(xx)xxxxx-xxxx') %>
         </div>
 
         <div class="mail-field my-2 px-3">
-          <%= form.label :subject, 'Assunto' %>
-          <%= form.text_field :subject, class: 'form-control', placeholder: 'Assunto' %>
+          <%= label_tag(:subject, 'Assunto') %>
+          <%= text_field_tag(:subject, nil, class: 'form-control', placeholder: 'Assunto') %>
         </div>
 
         <div class="mail-field my-2 px-3">
-          <%= form.label :message, 'Sua mensagem' %>
-          <%= form.text_area :message, class: 'form-control', placeholder: 'Sua mensagem' %>
+          <%= label_tag(:message, 'Sua mensagem') %>
+          <%= text_area_tag(:message, nil, class: 'form-control', placeholder: 'Sua mensagem') %>
         </div>
 
         <div class="mail-field mt-3 p-3">
-          <%= form.submit 'Enviar', class: 'btn-edit-profile' %>
+          <%= button_tag('Enviar', type: 'submit', class: 'btn-edit-profile') %>
         </div>
       </div>
     <% end %>
