@@ -9,5 +9,5 @@ class Admin < ApplicationRecord
 
   validates :password, format: { with: /\A(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}\z/, message: 'Deve conter pelo menos uma letra e um número' }
 
-  validates :username, presence: true, uniqueness: true, format: { with: /\A(?=.*gamero)(?=.*\d)(?=.*[!@#\$%^&*()-_=+{}\[\]|\\;:'",.<>\/\?`~]).*\z/ }
+  validates :username, presence: true, uniqueness: true, format: { with: /\A(?=.*gamero)(?=.*\d)(?=.*[!@#\$%^&*()-_=+{}\[\]|\\;:'",.<>\/\?`~_]).*\z/, message: 'Deve conter pelo menos um caracter especial e um número' }
 end
