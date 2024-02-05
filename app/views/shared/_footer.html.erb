@@ -3,12 +3,12 @@
     <div class="technician-infos d-flex justify-content-between">
       <div class="name-crea m-1">
         <p> Técnico agrimensor: Pedro Gamero </p>
-        <p> CREA: 5069875105-SP </p>
+        <p> RNP: 319.551.608-05 </p>
       </div>
 
       <div class="logo-footer">
         <%= link_to root_path, class: "footer-brand m-0" do %>
-          <%= image_tag "logo_atualizado-removebg-preview.png", class: "logotipo-footer" %>
+          <%= image_tag "logo_ULT.png", class: "logotipo-footer" %>
         <% end %>
       </div>
 
@@ -21,7 +21,9 @@
             <% end %>
           </div>
           <div class="talk-us align-items-center">
-            <p> Fale conosco </p>
+            <%= link_to "https://wa.me/5512997100762", target: "_blank", class: "talk-us" do %>
+              <p> Fale conosco </p>
+            <% end %>
           </div>
         </div>
 

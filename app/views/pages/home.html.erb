@@ -1,6 +1,11 @@
 <div class="container-home">
 
   <%# here is the carousel part %>
+  <div class="welcome-user">
+    <% if user_signed_in? %>
+      <p> Seja bem-vindx! Fique a vontade para navegar <i class="fa-regular fa-face-smile-beam"></i></p>
+    <% end %>
+  </div>
 
   <div class="container-banner my-3">
       <button class="arrow-left control" aria-label="Proximo"><i class="fa-solid fa-arrow-right fa-flip-horizontal" style="color: #fff;"></i></button>
@@ -25,7 +30,7 @@
   <div class="presentation d-flex justify-content-around row">
 
     <div class="text-presentation col-sm-10 col-md-7 my-2 px-4">
-      <h1 class="text-center my-4"> Gamero Topografia? </h1>
+      <h1 class="text-center my-4"> Sobre nós </h1>
       <div class="content-presentation">
         <p> Somos uma empresa especializada em serviços topográficos, tais como geolocalização, registro de CAR, agrimensura, entre outros. Nossa missão é executar serviços de excelência, destacando nossa expertise e foco em resultados positivos, utilizando os avanços tecnológicos da área a favor do cliente.</p>
         <p>
@@ -67,6 +72,9 @@
     </div>
 
   </div>
+
+  <%# slogan %>
+
   <div class="slogan m-3 p-2">
     <div class="d-flex justify-content-center">
       <h1 style="color: #2C4C30;">Analise, </h1>
