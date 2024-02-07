@@ -67,3 +67,4 @@ gem 'simple_form'
 gem 'pg'
 # gem 'rails', '~> 7.0', '>= 7.0.2'
 gem "cloudinary"
+gem 'activestorage', '~> 7.0.8'
