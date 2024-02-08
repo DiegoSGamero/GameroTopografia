@@ -21,6 +21,8 @@ Rails.application.routes.draw do
       get 'search_user', to: 'users#index'
     end
   end
+  get '/users/:id/photos', to: 'users#show_photos', as: 'user_photos'
+
 
   get '/propriedades', to: 'properties#index', as: 'properties_index'
   resources :properties do

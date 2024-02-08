@@ -41,3 +41,13 @@
     box-shadow: -2px -2px 4px 0px #5c5339d5;
   }
 }
+
+.btn-my-attachments {
+  margin-bottom: 12px;
+  text-decoration: none;
+  color: #183b27;
+  &:hover {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}

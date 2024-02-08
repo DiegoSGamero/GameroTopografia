@@ -1,0 +1,11 @@
+<h1>Fotos de <%= @user.full_name %></h1>
+
+<% if @photos.present? %>
+  <div class="photo-gallery">
+    <% @photos.each do |photo| %>
+      <%= image_tag photo.variant(resize: "300x300"), class: "photo" %>
+    <% end %>
+  </div>
+<% else %>
+  <p>Nenhuma foto encontrada.</p>
+<% end %>

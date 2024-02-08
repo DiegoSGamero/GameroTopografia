@@ -21,6 +21,10 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
+  def show_photos
+    @user = User.find(params[:id])
+    @photos = @user.photos
+  end
   # def new
   #   # @user = User.new
   # end

@@ -17,6 +17,9 @@
       <p class="profile-item">Categoria: <%= @user.role %></p>
       <p class="profile-item">Email: <%= @user.email %></p>
       <div class="div-edit-profile">
+        <%= link_to 'Ver meus anexos', user_photos_path(@user), class: 'btn-my-attachments' %>
+      </div>
+      <div class="div-edit-profile">
         <%= link_to "Editar perfil", edit_user_registration_path, class: 'btn-edit-profile' %>
       </div>
     </div>
