@@ -1,9 +1,10 @@
-<h1>Fotos de <%= @user.full_name %></h1>
+<h2 style="color: #1c301e;" class="products-title text-center m-3">Anexos de <%= @user.full_name %></h2>
 
 <% if @photos.present? %>
   <div class="photo-gallery">
     <% @photos.each do |photo| %>
-      <%= image_tag photo.variant(resize: "300x300"), class: "photo" %>
+      <%= cl_image_tag photo.key, transformation: [
+                 {width: 120, height: 120, gravity: "auto", crop: "fill", fetch_format: "auto" }], class:"attachment" %>
     <% end %>
   </div>
 <% else %>
