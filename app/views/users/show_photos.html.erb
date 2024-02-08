@@ -1,12 +1,24 @@
-<h2 style="color: #1c301e;" class="products-title text-center m-3">Anexos de <%= @user.full_name %></h2>
+<div class="container-photos p-3">
+  <h2 style="color: #1c301e;" class="products-title text-center m-3">Anexos de <%= @user.full_name %></h2>
 
-<% if @photos.present? %>
-  <div class="photo-gallery">
-    <% @photos.each do |photo| %>
-      <%= cl_image_tag photo.key, transformation: [
-                 {width: 120, height: 120, gravity: "auto", crop: "fill", fetch_format: "auto" }], class:"attachment" %>
-    <% end %>
-  </div>
-<% else %>
-  <p>Nenhuma foto encontrada.</p>
-<% end %>
+  <% if @photos.present? %>
+    <div class="photo-gallery d-flex row">
+      <% @photos.each do |photo| %>
+        <div class="col-2 m-2">
+          <%= link_to(cl_image_tag(photo.key, transformation: [{ width: 120, height: 120, gravity: "auto", crop: "fill", fetch_format: "auto" }], class: "attachment"), rails_blob_path(photo.blob, disposition: "attachment"), target: "_blank") %>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p>Ainda sem senhum anexo.</p>
+    <div class="photo-loged">
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
+
+          <%= f.input :photos, as: :file %>
+          <%= f.button :submit, "Cadastre-se", class: "btn-signup" %>
+        <% end %>
+        </div>
+    </div>
+  <% end %>
+</div>
