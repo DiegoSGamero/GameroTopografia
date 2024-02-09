@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/clientes', to: 'users#index', as: 'user_index'
   resources :users do
     collection do
+      delete 'delete_photo/:photo_id', to: 'users#delete_photo', as: 'delete_photo'
       get 'search_user', to: 'users#index'
       patch 'update_photos', to: 'users#update_photos'
     end

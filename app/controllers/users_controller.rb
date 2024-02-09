@@ -27,6 +27,16 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @photos = @user.photos
   end
+
+  def delete_photo
+    @user = User.find(params[:user_id])
+    @photo_id = params[:photo_id]
+    # Remover a foto do Cloudinary
+    Cloudinary::Uploader.destroy(@photo_id)
+    # Remover a foto do banco de dados
+    @user.photos.find(@photo_id).destroy
+    redirect_to user_profile_path, notice: "Foto excluída com sucesso."
+  end
   # def new
   #   # @user = User.new
   # end

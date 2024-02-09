@@ -4,8 +4,15 @@
   <div class="photo-gallery d-flex row p-2">
     <% if @photos.present? %>
       <% @photos.each do |photo| %>
-        <div class="col-sm-6 col-md-2 m-2">
-          <%= link_to(cl_image_tag(photo.key, transformation: [{ width: 120, height: 120, gravity: "auto", crop: "fill", fetch_format: "auto" }], class: "attachment"), rails_blob_path(photo.blob, disposition: "attachment"), target: "_blank") %>
+        <div class="d-flex col-sm-6 col-md-2 m-2">
+          <div class="img-div">
+            <%= link_to(cl_image_tag(photo.key, transformation: [{ width: 120, height: 120, gravity: "auto", crop: "fill", fetch_format: "auto" }], class: "attachment"), rails_blob_path(photo.blob, disposition: "attachment"), target: "_blank") %>
+          </div>
+          <div class="delete-photo">
+            <%# <%= link_to delete_photo_path(user_id: @user.id, photo_id: photo.id), method: :delete, data: { confirm: "Tem certeza que deseja excluir esta foto?" }, class: "del-photo-link" do %>
+              <%# <i style="color: #1c301e;" class="fa-regular fa-trash-can"></i>
+            <% end %>
+          </div>
         </div>
       <% end %>
   </div>
