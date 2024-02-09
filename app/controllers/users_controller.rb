@@ -9,9 +9,11 @@ class UsersController < ApplicationController
     end
   end
 
-  # def show
-  #   @user = User.find(params[:id])
-  # end
+  def show
+    @user = User.find(params[:id])
+    @photos = @user.photos
+  end
+
   def sign_out
     sign_out current_user
     redirect_to root_path
@@ -47,7 +49,7 @@ class UsersController < ApplicationController
 
   def destroy
   end
-  
+
   def update_photos
     current_user.photos.attach(params[:user][:photos])
     redirect_to user_profile_path, notice: 'Documentos enviados com sucesso!'
