@@ -47,6 +47,11 @@ class UsersController < ApplicationController
 
   def destroy
   end
+  
+  def update_photos
+    current_user.photos.attach(params[:user][:photos])
+    redirect_to user_profile_path, notice: 'Documentos enviados com sucesso!'
+  end
 
   private
 

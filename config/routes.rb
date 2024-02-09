@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :users do
     collection do
       get 'search_user', to: 'users#index'
+      patch 'update_photos', to: 'users#update_photos'
     end
   end
   get '/users/:id/photos', to: 'users#show_photos', as: 'user_photos'
