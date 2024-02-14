@@ -20,3 +20,13 @@
   text-decoration: none;
   color: #2C4C30;
 }
+
+@media screen and (max-width: 768px) {
+  .footer {
+    font-size: small;
+  }
+  .logotipo-footer {
+    width: 36px;
+    height: 42px;
+  }
+}

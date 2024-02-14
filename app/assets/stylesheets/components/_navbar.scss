@@ -141,3 +141,23 @@
   }
 
 }
+
+.dropdown-toggle {
+  color: #cac8c87a; /* Cor do texto do botão */
+}
+
+.dropdown-menu {
+  background-color: #cac8c87a;
+}
+
+.dropdown-menu a {
+  color: #2c4c306b;
+  text-decoration: none;
+  margin-left: 8px;
+  margin-block: 2px;
+  &:hover {
+    background-color: #467e57;
+    color: #e9e9e9;
+    font-weight: bold;
+  }
+}

@@ -98,7 +98,7 @@
 
 <div class="navbar p-1 d-flex row d-md-none">
   <%# logotipo link to home %>
-  <div class="logo col-2">
+  <div class="logo col-2 mt-2">
     <%= link_to root_path, class: "navbar-brand m-0" do %>
       <%= image_tag "lgotipo_gameroesoares-removebg-preview.png", class: "logotipo" %>
     <% end %>
@@ -178,13 +178,13 @@
     </ul>
   </div>
 
-  <div class="col-2 d-flex justify-content-center">
+  <div class="col-2 d-flex justify-content-center me-3">
 
-    <div class="btn login-home-2 text-center">
-      <%= link_to "Entrar", new_user_session_path, class: "sign_up_bar" %>
+    <div class="btn login-home-2 text-center ">
+      <%= link_to "Entrar", new_user_session_path, class: "sign_in_bar" %>
     </div>
     <div class="btn login-home-2 text-center me-2">
-      <%= link_to "Admin", new_admin_session_path, class: "sign_up_bar" %>
+      <%= link_to "Admin", new_admin_session_path, class: "sign_in_bar" %>
     </div>
 
   </div>
