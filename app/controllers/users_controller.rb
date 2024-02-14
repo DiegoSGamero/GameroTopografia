@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  require 'cloudinary'
+
   def index
     @query = params[:search]&.dig(:query)
     if @query.present?
@@ -30,26 +32,17 @@ class UsersController < ApplicationController
 
   def delete_photo
     @user = User.find(params[:user_id])
-    @photo_id = params[:photo_id]
+    @photo = @user.photos.find(params[:photo_id])
+
     # Remover a foto do Cloudinary
-    Cloudinary::Uploader.destroy(@photo_id)
+    Cloudinary::Uploader.destroy(@photo)
+
     # Remover a foto do banco de dados
-    @user.photos.find(@photo_id).destroy
+    @photo.destroy
+
     redirect_to user_profile_path, notice: "Foto excluída com sucesso."
   end
-  # def new
-  #   # @user = User.new
-  # end
 
-  # def create
-  #   # @user = User.new(user_params)
-
-  #   # if @user.save
-  #   #   redirect_to user_session_path
-  #   # else
-  #   #   render :create, status: :unprocessable_entity
-  #   # end
-  # end
 
   def edit
   end

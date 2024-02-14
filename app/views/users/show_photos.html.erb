@@ -1,7 +1,7 @@
-<div class="container-photos p-3">
-  <h2 style="color: #1c301e;" class="products-title text-center m-3">Anexos de <%= @user.full_name %></h2>
+<div class="container-photos">
+  <h2 style="color: #1c301e;" class="products-title text-center m-3">Anexos de <%= @user.full_name.capitalize %></h2>
 
-  <div class="photo-gallery d-flex row p-2">
+  <div class="photo-gallery d-flex row p-4">
     <% if @photos.present? %>
       <% @photos.each do |photo| %>
         <div class="d-flex col-sm-6 col-md-2 m-2">
@@ -9,8 +9,8 @@
             <%= link_to(cl_image_tag(photo.key, transformation: [{ width: 120, height: 120, gravity: "auto", crop: "fill", fetch_format: "auto" }], class: "attachment"), rails_blob_path(photo.blob, disposition: "attachment"), target: "_blank") %>
           </div>
           <div class="delete-photo">
-            <%# <%= link_to delete_photo_path(user_id: @user.id, photo_id: photo.id), method: :delete, data: { confirm: "Tem certeza que deseja excluir esta foto?" }, class: "del-photo-link" do %>
-              <%# <i style="color: #1c301e;" class="fa-regular fa-trash-can"></i>
+            <%= link_to delete_photo_path(user_id: @user.id, photo_id: photo.id), method: :delete, data: { confirm: "Tem certeza que deseja excluir esta foto?" }, class: "del-photo-link" do %>
+              <i style="color: #1c301e;" class="fa-regular fa-trash-can"></i>
             <% end %>
           </div>
         </div>
@@ -21,7 +21,7 @@
         <p>Ainda sem nenhum anexo <i style="color: #1c301e;" class="fa-solid fa-face-sad-tear"></i></p>
       </div>
     <% end %>
-  <div class="photo-update">
+  <div class="photo-update mb-3">
     <div class="ms-2 mt-3">
       <h5 style="color: #1c301e;"> Faça upload de documentos aqui <i style="color: #1c301e;" class="fa-solid fa-arrow-down-long"></i> <i style="color: #1c301e;" class="fa-solid fa-arrow-down-long"></i> <i style="color: #1c301e;" class="fa-solid fa-arrow-down-long"></i></h5>
     </div>

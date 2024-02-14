@@ -18,13 +18,15 @@ Rails.application.routes.draw do
   get '/clientes', to: 'users#index', as: 'user_index'
   resources :users do
     collection do
-      delete 'delete_photo/:photo_id', to: 'users#delete_photo', as: 'delete_photo'
+
       get 'search_user', to: 'users#index'
       patch 'update_photos', to: 'users#update_photos'
     end
   end
-  get '/users/:id/photos', to: 'users#show_photos', as: 'user_photos'
 
+  get '/users/:id/photos', to: 'users#show_photos', as: 'user_photos'
+  # delete 'delete_photo', to: 'users#delete_photo', as: 'delete_photo'
+  get 'delete_photo', to: 'users#delete_photo', as: 'delete_photo'
 
   get '/propriedades', to: 'properties#index', as: 'properties_index'
   resources :properties do
