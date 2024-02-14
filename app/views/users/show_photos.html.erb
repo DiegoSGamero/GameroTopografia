@@ -1,24 +1,42 @@
-<div class="container-photos p-3">
-  <h2 style="color: #1c301e;" class="products-title text-center m-3">Anexos de <%= @user.full_name %></h2>
+<div class="container-photos">
+  <h2 style="color: #1c301e;" class="products-title text-center m-3">Anexos de <%= @user.full_name.capitalize %></h2>
 
-  <% if @photos.present? %>
-    <div class="photo-gallery d-flex row">
+  <div class="photo-gallery d-flex row p-4">
+    <% if @photos.present? %>
       <% @photos.each do |photo| %>
-        <div class="col-2 m-2">
-          <%= link_to(cl_image_tag(photo.key, transformation: [{ width: 120, height: 120, gravity: "auto", crop: "fill", fetch_format: "auto" }], class: "attachment"), rails_blob_path(photo.blob, disposition: "attachment"), target: "_blank") %>
+        <div class="d-flex col-sm-6 col-md-2 m-2">
+          <div class="img-div">
+            <%= link_to(cl_image_tag(photo.key, transformation: [{ width: 120, height: 120, gravity: "auto", crop: "fill", fetch_format: "auto" }], class: "attachment"), rails_blob_path(photo.blob, disposition: "attachment"), target: "_blank") %>
+          </div>
+          <div class="delete-photo">
+            <%= link_to delete_photo_path(user_id: @user.id, photo_id: photo.id), method: :delete, data: { confirm: "Tem certeza que deseja excluir esta foto?" }, class: "del-photo-link" do %>
+              <i style="color: #1c301e;" class="fa-regular fa-trash-can"></i>
+            <% end %>
+          </div>
         </div>
       <% end %>
+  </div>
+    <% else %>
+      <div class="no-attachments">
+        <p>Ainda sem nenhum anexo <i style="color: #1c301e;" class="fa-solid fa-face-sad-tear"></i></p>
+      </div>
+    <% end %>
+  <div class="photo-update mb-3">
+    <div class="ms-2 mt-3">
+      <h5 style="color: #1c301e;"> Faça upload de documentos aqui <i style="color: #1c301e;" class="fa-solid fa-arrow-down-long"></i> <i style="color: #1c301e;" class="fa-solid fa-arrow-down-long"></i> <i style="color: #1c301e;" class="fa-solid fa-arrow-down-long"></i></h5>
     </div>
-  <% else %>
-    <p>Ainda sem senhum anexo.</p>
-    <div class="photo-loged">
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= f.error_notification %>
 
-          <%= f.input :photos, as: :file %>
-          <%= f.button :submit, "Cadastre-se", class: "btn-signup" %>
-        <% end %>
-        </div>
-    </div>
-  <% end %>
+    <%= simple_form_for(current_user, url: update_photos_users_path, html: { method: :patch, multipart: true }) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="photo-field mx-2 my-3">
+        <%# <%= f.label :photos, "Anexar", class: "me-2" %>
+        <%= f.file_field :photos, multiple: true %>
+      </div>
+
+      <div class="actions mx-2 my-3">
+        <%= f.submit "Enviar Fotos", class: "btn-send-img" %>
+      </div>
+    <% end %>
+  </div>
 </div>

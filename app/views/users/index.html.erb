@@ -20,23 +20,25 @@
   <% if @query.present? %>
     <% if @users.any? { |user| user.full_name&.downcase&.include?(@query.downcase) || user.CPF&.include?(@query) } %>
       <% @users.each do |user| %>
-        <div class="card-index-user d-flex justify-content-evenly">
-          <div>
-            <p> Nome: <%= user.full_name.split.map(&:capitalize).join(' ') %></p>
-            <% if user.fantasy_name.present? %>
-              <p>Nome fantasia: <%= user.fantasy_name.split.map(&:capitalize).join(' ') %></p>
-            <% elsif user.CNPJ.present? %>
-              <p>CNPJ: <%= user.CNPJ %></p>
-            <% end %>
-            <p>CPF: <%= user.CPF %></p>
-            <p>RG: <%= user.RG %></p>
+        <%= link_to user_path(user) do %>
+          <div class="card-index-user d-flex justify-content-evenly">
+              <div>
+                <p> Nome: <%= user.full_name.split.map(&:capitalize).join(' ') %></p>
+                <% if user.fantasy_name.present? %>
+                  <p>Nome fantasia: <%= user.fantasy_name.split.map(&:capitalize).join(' ') %></p>
+                <% elsif user.CNPJ.present? %>
+                  <p>CNPJ: <%= user.CNPJ %></p>
+                <% end %>
+                <p>CPF: <%= user.CPF %></p>
+                <p>RG: <%= user.RG %></p>
+              </div>
+              <div>
+                <p>Endereço: <%= user.address %></p>
+                <p>Telefone: <%= user.phone_number %></p>
+                <p>Email: <%= user.email %></p>
+              </div>
           </div>
-          <div>
-            <p>Endereço: <%= user.address %></p>
-            <p>Telefone: <%= user.phone_number %></p>
-            <p>Email: <%= user.email %></p>
-          </div>
-        </div>
+        <% end %>
 
         <div style="height: 120px;">
         </div>
@@ -56,23 +58,25 @@
     <% end %>
   <% else %>
     <% @users.each do |user| %>
-      <div class="card-index-user d-flex justify-content-evenly">
-        <div>
-          <p> Nome: <%= user.full_name.split.map(&:capitalize).join(' ') %></p>
-          <% if user.fantasy_name.present? %>
-            <p>Nome fantasia: <%= user.fantasy_name.split.map(&:capitalize).join(' ') %></p>
-          <% elsif user.CNPJ.present? %>
-            <p>CNPJ: <%= user.CNPJ %></p>
-          <% end %>
-          <p>CPF: <%= user.CPF %></p>
-          <p>RG: <%= user.RG %></p>
+      <%= link_to user_path(user) do %>
+        <div class="card-index-user d-flex justify-content-evenly">
+          <div>
+            <p> Nome: <%= user.full_name.split.map(&:capitalize).join(' ') %></p>
+            <% if user.fantasy_name.present? %>
+              <p>Nome fantasia: <%= user.fantasy_name.split.map(&:capitalize).join(' ') %></p>
+            <% elsif user.CNPJ.present? %>
+              <p>CNPJ: <%= user.CNPJ %></p>
+            <% end %>
+            <p>CPF: <%= user.CPF %></p>
+            <p>RG: <%= user.RG %></p>
+          </div>
+          <div>
+            <p>Endereço: <%= user.address %></p>
+            <p>Telefone: <%= user.phone_number %></p>
+            <p>Email: <%= user.email %></p>
+          </div>
         </div>
-        <div>
-          <p>Endereço: <%= user.address %></p>
-          <p>Telefone: <%= user.phone_number %></p>
-          <p>Email: <%= user.email %></p>
-        </div>
-      </div>
+      <% end %>
     <% end %>
   <% end %>
   </div>

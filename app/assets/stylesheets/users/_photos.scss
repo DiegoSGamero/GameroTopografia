@@ -1,0 +1,45 @@
+// .container-photos {
+//   margin-bottom: 28px;
+// }
+
+.btn-send-img {
+  text-decoration: none;
+  color: #183b27;
+  background-color: #4ab66b;
+  padding: 4px;
+  border-radius: 4px;
+  border: none;
+  transition: 0.3s;
+  &:hover {
+    font-weight: bold;
+    box-shadow: 1px 1px 2px #5c5339d5;
+  }
+  &:active {
+    box-shadow: -2px -2px 4px 0px #5c5339d5;
+  }
+}
+
+.attachment {
+  box-shadow: 0px 0px 4px #2c6b2f;
+}
+
+.delete-photo {
+  position: relative;
+  width: fit-content;
+}
+
+.del-photo-link {
+  position: absolute;
+  bottom: 0;
+  text-decoration: none;
+  color: #183b27;
+  margin-left: 4px;
+  &:hover {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}
+
+.no-attachments {
+  margin-bottom: 132px;
+}
