@@ -7,25 +7,27 @@
     <div class="form-itself col-sm-10 col-md-4 p-4">
       <h2 class="text-center m-4">Entrar</h2>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="field">
+        <div class="field mb-2">
           <%= f.label :email %><br />
           <%= f.email_field :email,
                             autofocus: true,
                             autocomplete: "email",
-                            class: "login-input" %>
+                            class: "login-input",
+                            id: "user_email" %>
         </div>
 
         <div class="field">
-          <%= f.label :password %><br />
+          <%= f.label :password, "Senha" %><br />
           <%= f.password_field :password,
                                 autocomplete: "current-password",
-                                class: "login-input" %>
+                                class: "login-input",
+                                id: "user_password" %>
         </div>
 
         <% if devise_mapping.rememberable? %>
           <div class="field my-2">
-            <%= f.check_box :remember_me %>
-            <%= f.label :lembrar_de_mim %>
+            <%= f.check_box :remember_me, id: "user_remember_me" %>
+            <%= f.label :remember_me, "Lembrar de mim", for: "user_remember_me" %>
           </div>
         <% end %>
 

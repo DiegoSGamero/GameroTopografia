@@ -7,22 +7,25 @@
       <div class="mail-fields p-2">
         <div class="mail-field my-2 px-3">
           <%= label_tag(:name, 'Seu nome') %>
-          <%= text_field_tag(:name, nil, class: 'form-control', placeholder: 'Seu nome') %>
+          <%= text_field_tag(:name, nil,
+                            class: 'form-control',
+                            placeholder: 'Seu nome',
+                            autocomplete: 'name') %>
         </div>
 
         <div class="mail-field my-2 px-3">
           <%= label_tag(:phone_number, 'Seu número de telefone') %>
-          <%= text_field_tag(:phone_number, nil, class: 'form-control', placeholder: '(xx)xxxxx-xxxx') %>
+          <%= text_field_tag(:phone_number, nil, class: 'form-control', placeholder: '(xx)xxxxx-xxxx', autocomplete: 'tel') %>
         </div>
 
         <div class="mail-field my-2 px-3">
           <%= label_tag(:subject, 'Assunto') %>
-          <%= text_field_tag(:subject, nil, class: 'form-control', placeholder: 'Assunto') %>
+          <%= text_field_tag(:subject, nil, class: 'form-control', placeholder: 'Assunto', autocomplete: 'subject') %>
         </div>
 
         <div class="mail-field my-2 px-3">
           <%= label_tag(:message, 'Sua mensagem') %>
-          <%= text_area_tag(:message, nil, class: 'form-control', placeholder: 'Sua mensagem') %>
+          <%= text_area_tag(:message, nil, class: 'form-control', placeholder: 'Sua mensagem', autocomplete: 'message') %>
         </div>
 
         <div class="mail-field mt-3 p-3">

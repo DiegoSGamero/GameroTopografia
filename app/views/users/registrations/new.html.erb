@@ -1,7 +1,7 @@
 <div class="container-signup d-flex justify-content-evenly row" data-signup-target="user">
   <div class="signup-form col-sm-10 col-md-5">
     <h2 style="color: #1c301e;" class="text-center my-3">Cadastro</h2>
-    <h2 style="color: #1c301e;" class="text-center">Cliente/Confrontante</h2>
+    <h2 style="color: #1c301e;" class="text-center mb-4">Cliente/Confrontante</h2>
 
     <div class="user-signup-form">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -11,20 +11,19 @@
           <%= f.label :full_name, "Nome Completo" %><br />
           <%= f.text_field :full_name,
                             required: true,
+                            autofocus: true,
                             class: "wide-input" %>
         </div>
 
         <div class="field m-2">
           <%= f.label :fantasy_name, "Nome Fantasia (opção empresa)" %><br />
           <%= f.text_field :fantasy_name,
-                            autofocus: true,
                             class: "wide-input" %>
         </div>
 
         <div class="field m-2">
           <%= f.label :email %><br />
           <%= f.email_field :email,
-                            autofocus: true,
                             autocomplete: "email",
                             required: true,
                             placeholder: "username@example.com.br",
@@ -35,7 +34,6 @@
           <%= f.label :RG, "RG (somente números)" %><br />
           <%= f.text_field :RG,
                             autocomplete: "off",
-                            autofocus: true,
                             required: true,
                             placeholder: " _ _ . _ _ _ . _ _ _ - _ ",
                             class: "wide-input" %>
@@ -46,7 +44,6 @@
           <%= f.label :CPF, "CPF (somente números)" %><br />
           <%= f.text_field :CPF,
                           autocomplete: "off",
-                          autofocus: true,
                           required: true,
                           placeholder: " _ _ _ . _ _ _ . _ _ _ - _ _ ",
                           class: "wide-input" %>
@@ -56,14 +53,12 @@
           <%= f.label :CNPJ, "CNPJ (opção empresa)" %><br />
           <%= f.text_field :CNPJ,
                             autocomplete: "off",
-                            autofocus: true,
                             class: "wide-input" %>
         </div>
 
         <div class="field m-2">
           <%= f.label :phone_number, "Telefone (com DDD)" %><br />
           <%= f.text_field :phone_number,
-                            autofocus: true,
                             required: true,
                             placeholder: "( _ _ ) _ _ _ _ _ - _ _ _ _ ",
                             class: "wide-input" %>
@@ -78,7 +73,6 @@
           <%= f.label :address, "Endereço" %><br />
           <%= f.text_field :address,
                             autocomplete: "address",
-                            autofocus: true,
                             required: true,
                             class: "wide-input" %>
         </div>
