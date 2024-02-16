@@ -18,10 +18,11 @@
   </div>
 
   <% if @query.present? %>
-    <% if @properties.any? { |property| property.name&.downcase&.include?(@query.downcase) || property.owners&.downcase&.include?(@query.downcase) || property.registration_number&.include?(@query) } %>
+    <% if @properties.any? { |property| property.name&.downcase&.include?(@query.downcase) || property.owners&.downcase&.include?(@query.downcase) || property.registration_number&.include?(@query) || property.user.full_name.like?(@query.downcase) } %>
       <% @properties.each do |property| %>
         <div class="card-index-property d-flex justify-content-evenly">
           <div>
+            <p>User: <%= property.user.full_name.split.map(&:capitalize).join(' ') %></p>
             <p>Nome: <%= property.name.split.map(&:capitalize).join(' ') %></p>
             <p>Matrícula: <%= property.registration_number %></p>
             <p>Proprietários: <%= property.owners %></p>
@@ -39,7 +40,7 @@
     <% else %>
       <div class= "d-flex justify-content-center align-items-center">
         <div class="message d-flex align-items-center">
-          <p class="text-center m-4">Nenhum usuário encontrado para "<strong><%= @query %></strong>".</p>
+          <p class="text-center m-4">Nenhuma propriedade encontrada para "<strong><%= @query %></strong>".</p>
         </div>
         <div class="d-flex align-items-center">
           <%= link_to "Voltar", "/properties", class: "btn back-to-users" %>
