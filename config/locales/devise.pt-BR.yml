@@ -62,3 +62,6 @@ pt-BR:
       not_saved:
         one: "Não foi possível salvar este(a) %{resource}:"
         other: "Não foi possível salvar este(a) %{resource}:"
+    attributes:
+      current_password:
+        invalid: "Senha atual inválida"
