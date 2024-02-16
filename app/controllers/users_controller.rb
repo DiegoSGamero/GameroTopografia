@@ -53,14 +53,27 @@ class UsersController < ApplicationController
   def destroy
   end
 
+  # def update_photos
+  #   @user = current_user
+  #   @user.skip_password_validation = true
+  #   @user.photos.attach(params[:user][:photos])
+  #   redirect_to user_profile_path, notice: 'Documentos enviados com sucesso!'
+  # end
+
   def update_photos
-    current_user.photos.attach(params[:user][:photos])
+    @user = current_user
+    photos = params[:user][:photos]
+    @user.photos.attach(photos) if photos.present?
     redirect_to user_profile_path, notice: 'Documentos enviados com sucesso!'
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:full_name, :email, :CPF, :address, :phone_number, :RG)
+    params.require(:user).permit(:full_name, :email, :CPF, :address, :phone_number, :RG, :photo)
   end
+
+  # def password_required?
+  #   new_record? || password.present? || password_confirmation.present?
+  # end
 end

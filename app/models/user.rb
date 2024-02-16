@@ -15,12 +15,16 @@ class User < ApplicationRecord
   validates :address, presence: true
   ROLES = %w[cliente Cliente Confrontante confrontante]
   validates :role, inclusion: { in: ROLES }
+
   attr_accessor :validate_password
-  validates :password, format: { with: /\A(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}\z/, message: 'Deve conter pelo menos uma letra e um número' }, if: :password_required?
+
+  validates :password, format: { with: /\A(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}\z/, message: 'Deve conter pelo menos uma letra e um número' }, if: :password_required?, on: :update
+
+  attr_accessor :skip_password_validation
 
   private
 
   def password_required?
-    !persisted? || password.present? || password_confirmation.present?
+    new_record? || password.present? || password_confirmation.present?
   end
 end

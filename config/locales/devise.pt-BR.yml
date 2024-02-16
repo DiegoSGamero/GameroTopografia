@@ -65,3 +65,4 @@ pt-BR:
     attributes:
       current_password:
         invalid: "Senha atual inválida"
+        blank: "Senha atual não preenchida"

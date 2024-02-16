@@ -55,8 +55,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
   def disable_password_validation
-    resource_class.skip_callback(:validate, :before, :password_required, raise: false)
+    resource_class.skip_callback(:validate, :before, :password_required?, raise: false)
     yield
-    resource_class.set_callback(:validate, :before, :password_required)
+    resource_class.set_callback(:validate, :before, :password_required?)
   end
 end
