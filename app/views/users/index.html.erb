@@ -20,7 +20,7 @@
   <% if @query.present? %>
     <% if @users.any? { |user| user.full_name&.downcase&.include?(@query.downcase) || user.CPF&.include?(@query) } %>
       <% @users.each do |user| %>
-        <%= link_to user_path(user) do %>
+        <%= link_to user_path(user), class: "link-user-index text-decoration-none" do %>
           <div class="card-index-user d-flex justify-content-evenly">
               <div>
                 <p> Nome: <%= user.full_name.split.map(&:capitalize).join(' ') %></p>
