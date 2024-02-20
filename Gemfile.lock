@@ -111,6 +111,9 @@ GEM
     irb (1.11.1)
       rdoc
       reline (>= 0.4.2)
+    jbuilder (2.11.5)
+      actionview (>= 5.0.0)
+      activesupport (>= 5.0.0)
     launchy (2.5.2)
       addressable (~> 2.8)
     letter_opener (1.8.1)
@@ -250,6 +253,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   importmap-rails
+  jbuilder
   letter_opener
   pg
   puma (~> 5.0)
