@@ -57,7 +57,7 @@
         </div>
 
         <div class="field m-2">
-          <%= f.label :phone_number, "Telefone (com DDD)" %><br />
+          <%= f.label :phone_number, "Telefone (com DDD - somente números)" %><br />
           <%= f.text_field :phone_number,
                             required: true,
                             placeholder: "( _ _ ) _ _ _ _ _ - _ _ _ _ ",
@@ -65,8 +65,8 @@
         </div>
 
         <div class="field m-2">
-          <%= f.label :role, "Cliente ou confrontante?" %><br />
-          <%= f.select :role, ['Cliente', 'Confrontante'], {}, { class: "wide-input" } %>
+          <%= f.label :role, "Cliente ou Vizinho?" %><br />
+          <%= f.select :role, ['Cliente', 'Vizinho'], {}, { class: "wide-input" } %>
         </div>
 
         <div class="field m-2">

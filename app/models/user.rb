@@ -13,7 +13,7 @@ class User < ApplicationRecord
   validates :CPF, presence: true, uniqueness: true, format: { with: /\A\d{11}\z/, message: "O CPF deve ter exatamente 11 dígitos" }
   validates :phone_number, presence: true, format: { with: /\A\d{10,11}\z/, message: "O número de telefone deve ter entre 10 e 11 dígitos" }
   validates :address, presence: true
-  ROLES = %w[cliente Cliente Confrontante confrontante]
+  ROLES = %w[cliente Cliente Vizinho vizinho]
   validates :role, inclusion: { in: ROLES }
 
   attr_accessor :validate_password
