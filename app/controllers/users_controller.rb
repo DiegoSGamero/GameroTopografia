@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   require 'cloudinary'
+  before_action :authenticate_user!, except: %i[index show]
 
   def index
     @query = params[:search]&.dig(:query)

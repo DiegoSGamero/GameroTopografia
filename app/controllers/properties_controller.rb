@@ -1,4 +1,6 @@
 class PropertiesController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     @query = params[:search]&.dig(:query)
     if @query.present?
