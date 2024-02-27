@@ -81,6 +81,9 @@ test:
 #
 production:
   <<: *default
-  database: GameroTopografia_production
-  username: GameroTopografia
-  password: <%= ENV["GAMEROTOPOGRAFIA_DATABASE_PASSWORD"] %>
+  url: <%= ENV["DATABASE_URL"] %>
+  host: <%= ENV["PGHOST"] %>
+  database: <%= ENV["PGDATABASE"] %>
+  username: <%= ENV["PGUSER"] %>
+  password: <%= ENV["PGPASSWORD"] %>
+  port: <%= ENV["PGPORT"] %>
