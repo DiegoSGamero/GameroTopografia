@@ -35,5 +35,8 @@ module GameroTopografia
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Set eager load to true for production and false for other environments
+    # config.eager_load = Rails.env.production?
   end
 end
