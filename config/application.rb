@@ -39,5 +39,10 @@ module GameroTopografia
 
     # Set eager load to true for production and false for other environments
     # config.eager_load = Rails.env.production?
+    if Rails.env.production?
+      config.eager_load = true
+    elsif Rails.env.development? || Rails.env.test?
+      config.eager_load = false
+    end
   end
 end
