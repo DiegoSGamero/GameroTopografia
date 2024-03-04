@@ -4,7 +4,7 @@ logger.info "Loading production.rb file..."
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.hosts << ENV['DEVELOPMENT_HOSTS']
+  config.hosts << "gamerotopografia-production.up.railway.app"
 
   # Code is not reloaded between requests.
   config.cache_classes = true
