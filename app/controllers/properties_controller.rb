@@ -1,5 +1,7 @@
 class PropertiesController < ApplicationController
-  before_action :authenticate_admin!
+
+  before_action :authorize_admin, only: [:index, :show]
+  before_action :authorize_user, only: [:new, :create]
 
   def index
     @query = params[:search]&.dig(:query)
