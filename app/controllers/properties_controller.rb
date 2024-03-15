@@ -46,4 +46,16 @@ class PropertiesController < ApplicationController
   def property_params
     params.require(:property).permit(:name, :address, :owners, :size, :limit_type, :registration_number, :car, :ccir)
   end
+
+  def authorize_user
+    unless user_signed_in? && current_user.is_a?(User)
+      redirect_to root_path, alert: "Acesso negado. Você não tem permissão para acessar esta página."
+    end
+  end
+
+  def authorize_admin
+    unless admin_signed_in?
+      redirect_to root_path, alert: "Acesso negado. Você não tem permissão para acessar esta página."
+    end
+  end
 end
