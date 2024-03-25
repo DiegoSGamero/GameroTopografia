@@ -26,17 +26,19 @@
       <h5 style="color: #1c301e;"> Faça upload de documentos aqui <i style="color: #1c301e;" class="fa-solid fa-arrow-down-long"></i> <i style="color: #1c301e;" class="fa-solid fa-arrow-down-long"></i> <i style="color: #1c301e;" class="fa-solid fa-arrow-down-long"></i></h5>
     </div>
 
-    <%= simple_form_for(current_user, url: update_photos_users_path, html: { method: :patch, multipart: true }) do |f| %>
-      <%= f.error_notification %>
+    <div class="mb-5">
+      <%= simple_form_for(current_user, url: update_photos_users_path, html: { method: :patch, multipart: true }) do |f| %>
+        <%= f.error_notification %>
 
-      <div class="photo-field mx-2 my-3">
-        <%# <%= f.label :photos, "Anexar", class: "me-2" %>
-        <%= f.file_field :photos, multiple: true %>
-      </div>
+        <div class="photo-field mx-2 my-3">
+          <%# <%= f.label :photos, "Anexar", class: "me-2" %>
+          <%= f.file_field :photos, multiple: true %>
+        </div>
 
-      <div class="actions mx-2 my-3">
-        <%= f.submit "Enviar Fotos", class: "btn-send-img" %>
-      </div>
-    <% end %>
+        <div class="actions mx-2 my-3">
+          <%= f.submit "Enviar Fotos", class: "btn-send-img" %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
