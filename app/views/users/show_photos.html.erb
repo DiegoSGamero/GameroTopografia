@@ -26,7 +26,7 @@
       <h5 style="color: #1c301e;"> Faça upload de documentos aqui <i style="color: #1c301e;" class="fa-solid fa-arrow-down-long"></i> <i style="color: #1c301e;" class="fa-solid fa-arrow-down-long"></i> <i style="color: #1c301e;" class="fa-solid fa-arrow-down-long"></i></h5>
     </div>
 
-    <div class="mb-5">
+    <div class="upload-photo-form">
       <%= simple_form_for(current_user, url: update_photos_users_path, html: { method: :patch, multipart: true }) do |f| %>
         <%= f.error_notification %>
 
