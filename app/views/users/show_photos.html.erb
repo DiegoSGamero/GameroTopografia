@@ -6,8 +6,7 @@
       <% @photos.each do |photo| %>
         <div class="d-flex col-sm-6 col-md-2 m-2">
           <div class="img-div">
-            <%# <%= link_to(cl_image_tag(photo.key, transformation: [{ width: 120, height: 120, gravity: "auto", crop: "fill", fetch_format: "auto" }], class: "attachment"), rails_blob_path(photo.blob, disposition: "attachment"), target: "_blank") %>
-            <%= cl_image_tag photo.key, transformation: [ {width: 132, height: 160, gravity: "auto", crop: "fill", fetch_format: "auto" }], class:"attachment" %>
+            <%= link_to(cl_image_tag(photo.key, transformation: [{ width: 132, height: 160, gravity: "auto", crop: "fill", fetch_format: "auto" }], class: "attachment"), rails_blob_path(photo.blob, disposition: "attachment"), target: "_blank") %>
           </div>
           <div class="delete-photo">
             <%= link_to delete_photo_path(user_id: @user.id, photo_id: photo.id), method: :delete, data: { confirm: "Tem certeza que deseja excluir esta foto?" }, class: "del-photo-link" do %>
