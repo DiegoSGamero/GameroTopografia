@@ -26,12 +26,12 @@ controls.forEach(control => {
 
     // console.log("control", isLeft, currentItem);
 
-    items.forEach(item => {
+    // items.forEach(item => {
       items[currentItem].scrollIntoView({
         // inline: "center",
         block: "center",
         behavior: "smooth",
       });
-    });
+    // });
   })
 });
