@@ -57,6 +57,7 @@ pt-BR:
       already_confirmed: "já foi confirmado, por favor logue para continuar"
       confirmation_period_expired: "deve ser confirmada dentro de %{period}, por favor solicite novamente"
       expired: "expirou, por favor solicite um novo"
+      taken: "Informações de usuário ja estão em uso"
       not_found: "não encontrado"
       not_locked: "não estava bloqueado"
       not_saved:
