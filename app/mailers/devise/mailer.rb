@@ -1,6 +1,7 @@
 class Devise::Mailer < Devise.parent_mailer.constantize
   include Devise::Controllers::UrlHelpers
-  default template_path: 'devise/mailer'
+  include Devise::Mailers::Helpers
+  default template_path: 'users/mailer'
 
   def reset_password_instructions(record, token, opts={})
     @token = token

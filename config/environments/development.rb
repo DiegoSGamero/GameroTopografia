@@ -10,7 +10,7 @@ Rails.application.configure do
       address: 'smtp.gmail.com',
       port: 587,
       domain: 'app.gamerotopografia.com.br',
-      user_name: 'contato..gamero.topografia@gmail.com',
+      user_name: 'contato.gamero.topografia@gmail.com',
       password: ENV['EMAIL_PASSWORD'],
       authentication: 'plain',
       enable_starttls_auto: true
