@@ -77,3 +77,5 @@ pt-BR:
         taken: "já está em uso"
       RG:
         taken: "já está em uso"
+    email:
+          blank: "Email para envio não preenchido"
