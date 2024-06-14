@@ -4,13 +4,13 @@
   </div>
 
   <div class="text-center">
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, 'data-turbolink': false }) do |f| %>
       <%= render "users/shared/error_messages", resource: resource %>
 
       <div class="m-2">
-        <%# <%= f.label :email %><%#<br /> %>
         <div class="m-2">
-          <%= label_tag "email", "Email cadastrado" %><br />
+          <%= f.label :email, "Email cadastrado", for: "user_email" %><br />
+          <%# <%= label_tag "email", "Email cadastrado" %><%#br /> %>
         </div>
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
         <%# <%= f.label :email, "Email cadastrado" %><%#br /> %>
@@ -18,9 +18,9 @@
   </div>
 
   <div class="text-center">
-    <div class="mb-5">
-      <%= f.submit "Enviar instruções de nova senha", class: "btn-login-form" %>
-    </div>
+      <div class="mb-5">
+        <%= f.submit "Enviar instruções de nova senha", class: "" %>
+      </div>
     <% end %>
 
   </div>

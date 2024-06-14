@@ -68,16 +68,16 @@ class UsersController < ApplicationController
     redirect_to user_profile_path, notice: 'Documentos enviados com sucesso!'
   end
 
-  def send_reset_password_instructions
-    user = User.find_by(email: params[:email])
-    if user.present?
-      user.send_reset_password_instructions
-      flash[:notice] = "Instruções de reset de senha foram enviadas para o seu e-mail."
-    else
-      flash[:alert] = "E-mail não encontrado."
-    end
-    redirect_to new_user_session_path
-  end
+  # def send_reset_password_instructions
+  #   user = User.find_by(email: params[:email])
+  #   if user.present?
+  #     user.send_reset_password_instructions
+  #     flash[:notice] = "Instruções de reset de senha foram enviadas para o seu e-mail."
+  #   else
+  #     flash[:alert] = "E-mail não encontrado."
+  #   end
+  #   redirect_to new_user_session_path
+  # end
 
   private
 
