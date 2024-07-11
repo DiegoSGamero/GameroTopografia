@@ -20,7 +20,7 @@ require "action_cable/engine"
 Bundler.require(*Rails.groups)
 
 
-Dotenv::Rails.load if defined?(Dotenv::Rails)
+Dotenv::Railtie.load if defined?(Dotenv::Railtie)
 
 module GameroTopografia
   class Application < Rails::Application
