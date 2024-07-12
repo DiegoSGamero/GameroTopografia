@@ -72,6 +72,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
     port: 587,
+    domain: 'app.gamerotopografia.com.br',
     user_name: 'contato.gamero.topografia@gmail.com',
     password: ENV['EMAIL_PASSWORD'],
     authentication: 'plain',
